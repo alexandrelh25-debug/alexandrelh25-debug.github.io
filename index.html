@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Présentation du collecteur personnel Suivi Manifold E0-M3 et de son utilisation de Google Drive.">
+<title>Suivi Manifold E0-M3</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="wrap"><a class="brand" href="./">Marchés prédictifs</a><nav aria-label="Navigation principale"><a href="./" aria-current="page">Présentation</a><a href="privacy.html">Confidentialité</a></nav></header>
+<main id="contenu" class="wrap">
+<section class="hero">
+<p class="eyebrow">Projet personnel · Documentation de l’application</p>
+<h1>Suivi Manifold<br><span>E0-M3</span></h1>
+<p class="lead">Un collecteur de données publiques pour observer l’évolution de probabilités de marchés prédictifs et conserver des captures vérifiables.</p>
+<div class="facts" aria-label="Périmètre du collecteur"><div><strong>25</strong><span>marchés prédéfinis</span></div><div><strong>Lecture seule</strong><span>sur Manifold</span></div><div><strong>Usage personnel</strong><span>par son propriétaire</span></div></div>
+</section>
+<section class="section"><p class="eyebrow">Fonctionnement</p><h2>Observer, horodater, conserver.</h2><p>Le programme est conçu pour s’exécuter périodiquement sur GitHub Actions. Il consulte l’API publique de Manifold et conserve les réponses des marchés, les probabilités, les règles, les échéances, les statuts et l’historique paginé des transactions publiques. Les heures de réception et les empreintes SHA-256 permettent de vérifier les captures.</p><p>Il n’effectue aucune transaction sur Manifold et n’utilise aucune clé de négociation. Il n’attribue pas automatiquement de résultat scientifique aux marchés observés.</p></section>
+<section class="section"><p class="eyebrow">Connexion Google</p><h2>Pourquoi accéder à Google Drive ?</h2><p>Drive sert à conserver les archives de capture, leurs manifestes d’intégrité et les reçus de dépôt. Le collecteur relit également les archives précédentes dans le dossier de suivi pour contrôler la continuité et comparer les données.</p><aside><strong>Portée de l’autorisation.</strong> La version actuelle demande le niveau d’accès OAuth <code>https://www.googleapis.com/auth/drive</code>. Celui-ci permet techniquement d’accéder à l’ensemble du Drive autorisé. Le code du collecteur limite ses opérations au dossier de suivi configuré ; cette limite est appliquée par le programme, et non par une restriction Google au seul dossier.</aside><p>Cette page publique est une documentation. Elle ne propose aucun formulaire de connexion et ne reçoit aucun identifiant Google.</p><a class="button" href="privacy.html">Lire la politique de confidentialité <span aria-hidden="true">→</span></a></section>
+<section class="section compact"><h2>Responsable et assistance</h2><p>Application personnelle administrée par <a href="https://github.com/alexandrelh25-debug">alexandrelh25-debug</a>. Pour une question, utiliser l’adresse d’assistance indiquée sur l’écran de consentement Google ou <a href="https://github.com/alexandrelh25-debug/alexandrelh25-debug.github.io/issues">ouvrir une demande dans le dépôt de documentation</a>, sans y joindre de données privées ni de secrets.</p></section>
+</main>
+<footer class="wrap"><span>Suivi Manifold E0-M3</span><a href="privacy.html">Politique de confidentialité</a></footer>
+</body></html>

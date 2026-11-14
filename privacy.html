@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Politique de confidentialité du collecteur personnel Suivi Manifold E0-M3 : accès Google Drive, usages, stockage et révocation.">
+<title>Confidentialité · Suivi Manifold E0-M3</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="wrap"><a class="brand" href="./">Marchés prédictifs</a><nav aria-label="Navigation principale"><a href="./">Présentation</a><a href="privacy.html" aria-current="page">Confidentialité</a></nav></header>
+<main id="contenu" class="wrap article">
+<p class="eyebrow">Application personnelle</p><h1>Politique de confidentialité</h1><p class="muted">Version du 14 novembre 2026</p>
+<p>Cette politique décrit le fonctionnement prévu de <strong>Suivi Manifold E0-M3</strong>, un collecteur personnel de données publiques, et son utilisation de Google Drive. Le responsable est le titulaire du compte GitHub <a href="https://github.com/alexandrelh25-debug">alexandrelh25-debug</a>. Elle s’applique au collecteur et à cette documentation publique.</p>
+<h2>1. Finalité</h2>
+<p>Le collecteur observe une cohorte prédéfinie de marchés Manifold afin de conserver des captures horodatées et vérifiables. Google Drive est utilisé pour stocker et relire les archives de ce suivi. Aucune transaction Manifold n’est réalisée.</p>
+<h2>2. Données consultées et créées</h2>
+<ul><li><strong>Données publiques Manifold :</strong> identifiants et descriptions des marchés, probabilités, règles, échéances, statuts et historique des transactions renvoyé par l’API publique. Ces réponses peuvent contenir des identifiants publics de participants.</li><li><strong>Données Google Drive :</strong> métadonnées du dossier de suivi et de ses fichiers, contenu des archives précédentes et de leurs manifestes, identifiants, noms, tailles et sommes de contrôle des fichiers. Le programme crée de nouvelles archives, de nouveaux manifestes et des reçus dans ce dossier.</li><li><strong>Données d’autorisation :</strong> identifiant et secret du client OAuth, jeton de renouvellement et jetons d’accès temporaires nécessaires pour appeler l’API Google Drive.</li><li><strong>Données techniques :</strong> horodatages, états HTTP, journaux de collecte, erreurs, contrôles d’intégrité et références des dépôts effectués.</li></ul>
+<h2>3. Portée de l’accès Google</h2>
+<p>La version actuelle utilise la portée <code>https://www.googleapis.com/auth/drive</code>, qui permet techniquement de consulter et gérer l’ensemble des fichiers du Drive autorisé. Le code limite ses requêtes au dossier de suivi configuré et aux fichiers qu’il contient ou crée. Cette limitation relève du programme ; elle ne constitue pas une autorisation Google limitée à ce seul dossier.</p>
+<p>Le flux automatisé lit les archives nécessaires au suivi et crée de nouveaux fichiers. Il ne contient aucune opération de suppression ni de remplacement d’un fichier Drive existant. Il n’est pas conçu pour parcourir les autres dossiers ou exploiter d’autres documents personnels.</p>
+<h2>4. Utilisation des données Google</h2>
+<p>Les informations reçues de Google servent uniquement à conserver les captures, vérifier leurs dépôts, relire la dernière archive et contrôler la continuité du suivi. Le collecteur automatisé n’utilise pas ces informations à des fins publicitaires, ne les vend pas et ne les transmet pas à un modèle d’intelligence artificielle pour entraîner un modèle.</p>
+<p>L’utilisation et le transfert d’informations reçues des API Google respectent la <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, y compris ses exigences de <em>Limited Use</em>.</p>
+<h2>5. Hébergement et prestataires</h2>
+<p><strong>Google</strong> fournit l’autorisation OAuth et le stockage Drive. <strong>GitHub</strong> héberge le code du collecteur dans un dépôt privé et exécute les tâches dans GitHub Actions. Les archives Drive nécessaires à une exécution sont téléchargées dans l’environnement temporaire de cette tâche ; de nouvelles captures y sont générées, puis déposées dans Drive.</p>
+<p>Les secrets d’exécution sont destinés aux secrets chiffrés du dépôt GitHub privé. La configuration initiale conserve aussi un fichier OAuth et un fichier de secrets sur l’ordinateur du propriétaire. Les jetons d’accès temporaires sont utilisés en mémoire pendant l’exécution. Les journaux du collecteur ne sont pas conçus pour afficher ces secrets.</p>
+<p>Cette documentation publique est hébergée séparément sur GitHub Pages. Elle ne contient aucune archive de capture, aucun fichier OAuth et aucun jeton. Elle ne rend pas publics les fichiers du dépôt privé ou du Drive du propriétaire.</p>
+<h2>6. Durées de conservation</h2>
+<p>Les captures conservées dans Google Drive et les copies locales restent présentes jusqu’à leur suppression par le propriétaire ; le collecteur ne leur applique aucune suppression automatique. Les artefacts de secours du workflow GitHub sont configurés pour une conservation de sept jours. La conservation des journaux d’exécution dépend des paramètres du dépôt et du service GitHub.</p>
+<p>Les fichiers de configuration et les secrets restent présents jusqu’à leur suppression ou révocation par le propriétaire. Révoquer l’accès Google ne supprime pas les archives déjà créées.</p>
+<h2>7. Visite de ce site</h2>
+<p>Le code de ce site n’ajoute aucun outil d’analyse d’audience, aucune publicité et aucun cookie applicatif. GitHub peut traiter des informations techniques de connexion dans le cadre de son hébergement, conformément à sa <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement">politique de confidentialité</a>.</p>
+<h2>8. Contrôle, révocation et suppression</h2>
+<p>Le propriétaire peut suspendre le workflow GitHub, révoquer l’application depuis les <a href="https://myaccount.google.com/connections">connexions de son compte Google</a>, supprimer les secrets du dépôt et effacer ses archives dans Drive ou ses copies locales. Ces opérations sont distinctes : la révocation empêche les nouveaux accès autorisés, tandis que la suppression des données déjà conservées doit être effectuée séparément.</p>
+<h2>9. Contact et mises à jour</h2>
+<p>Pour une question relative à cette application, utiliser l’adresse d’assistance affichée sur l’écran de consentement Google ou <a href="https://github.com/alexandrelh25-debug/alexandrelh25-debug.github.io/issues">ouvrir une demande dans le dépôt de documentation</a>. Ne publier aucun secret ni contenu privé dans une demande publique.</p>
+<p>Cette politique sera adaptée si les finalités, les autorisations ou les modalités de traitement du collecteur changent.</p>
+<a class="button" href="./">Retour à la présentation</a>
+</main>
+<footer class="wrap"><span>Suivi Manifold E0-M3</span><a href="privacy.html">Politique de confidentialité</a></footer>
+</body></html>
